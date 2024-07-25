@@ -15,6 +15,10 @@ const config = {
       padding: "2rem",
     },
     extend: {
+      colors:{
+        'lightBlue':'#60EFFF',
+        'deepBlue':'#0061FF',
+      },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
         DM: ["DM Sans", "sans-serif"],
