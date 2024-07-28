@@ -6,6 +6,7 @@ import Footer from "@/components/landing/Footer";
 import HeroSection from "@/components/landing/HeroSection";
 import MarketingSection from "@/components/landing/MarketingSection";
 import Navbar from "@/components/landing/Navbar";
+import Testimonials from "@/components/landing/Testimonials";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Courses />
       <Events />
       <Blogs />
+      <Testimonials />
       <MarketingSection />
       <Footer />
     </main>
