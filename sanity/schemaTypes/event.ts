@@ -4,11 +4,6 @@ export default {
     title: 'Events',
     fields: [
       {
-        name: "id",
-        type: "number",
-        title: "Id"
-      },
-      {
         name: 'title',
         type: 'string',
         title: 'Title of Event',
@@ -27,11 +22,6 @@ export default {
         title: 'Image Url',
       },
       {
-        name: 'description',
-        type: 'text',
-        title: 'Description',
-      },
-      {
         name: 'date',
         type: 'date',
         title: 'Date',
@@ -42,9 +32,14 @@ export default {
         title: 'Location',
       },
       {
+        name: 'building',
+        type: 'string',
+        title: 'Building / Landmark',
+      },
+      {
         name: 'link',
         type: 'url',
-        title: 'Event Link',
+        title: 'Event Link to Luma/EventBrite',
       },
       {
         name: 'category',
@@ -55,11 +50,6 @@ export default {
             name: 'title',
             type: 'string',
             title: 'Title',
-          },
-          {
-            name: 'href',
-            type: 'string',
-            title: 'Href',
           },
         ],
       },

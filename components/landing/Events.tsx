@@ -1,13 +1,14 @@
 import { Location } from "@/constants/svg";
 import { client, urlFor } from "@/lib/sanity";
-import { BlogArticle } from "@/types/interface";
+import { BlogArticle, EventInterface } from "@/types/interface";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 export const revalidate = 30;
+import { format } from "date-fns";
 
 async function getData() {
-  const query = `*[_type == 'blog'] | order(_createdAt desc){
+  const query = `*[_type == 'event'] | order(_createdAt desc){
     title,
       description,
       "currentSlug": slug.current,
@@ -17,6 +18,8 @@ async function getData() {
       "updatedAt": _updatedAt,
       date,
       category,
+      building,
+      location,
       link,
       "categoryTitle":category.title,
       "authorName":author.name,
@@ -46,7 +49,7 @@ const Events = async () => {
         </h4>
       </article>
       <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3 ">
-        {data.map((event: BlogArticle) => (
+        {data.map((event: EventInterface) => (
           <Link
             href={`/blog/${event.currentSlug}`}
             key={event.id}
@@ -72,21 +75,21 @@ const Events = async () => {
               <div className="group relative">
                 <div className="flex items-center">
                   <span className="flex flex-col items-center m-2">
-                    <h4 className="text-blue-700">SEP</h4>
-                    <h2 className="text-blue-950 text-4xl font-bold">30</h2>
+                    <h4 className="text-blue-700 font-semibold">{format(new Date(event.dateTime), "MMM")}</h4>
+                    <h2 className="text-blue-950 text-4xl font-bold">{format(new Date(event.dateTime), "co")}</h2>
                   </span>
-                  <span className="mt-3 text-2xl font-semibold text-black">
+                  <span className="mt-3 ml-5 text-lg font-semibold text-black">
                     {event.title}
                   </span>
                 </div>
                 <div className="flex items-center m-2">
                   <Image src={Location} alt="" />
-                  <div className="mx-2">
-                    <p className=" line-clamp-3 text-lg leading-6 text-gray-400">
-                      {event.title}
-                    </p>
+                  <div className="mx-2 ml-5">
                     <p className="mt-1 line-clamp-3 text-sm leading-6 text-gray-400">
-                      {event.description}
+                      {event.building}
+                    </p>
+                    <p className=" line-clamp-3 text-sm leading-6 text-gray-400">
+                      {event.location}
                     </p>
                   </div>
                 </div>

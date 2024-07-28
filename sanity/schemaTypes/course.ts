@@ -1,17 +1,17 @@
 export default {
-  name: 'blog',
+  name: 'course',
   type: 'document',
-  title: 'Blog',
+  title: 'Course',
   fields: [
     {
       name: 'title',
       type: 'string',
-      title: 'Title of Blog article',
+      title: 'Title of Course ',
     },
     {
       name: 'slug',
       type: 'slug',
-      title: 'Slug of Blog article',
+      title: 'Slug of Course article',
       options: {
         source: 'title',
       },
@@ -27,11 +27,6 @@ export default {
       title: 'Date',
     },
     {
-      name: 'link',
-      type: 'url',
-      title: 'Blog Link',
-    },
-    {
       name: 'category',
       type: 'object',
       title: 'Category',
@@ -40,7 +35,7 @@ export default {
           name: 'title',
           type: 'string',
           title: 'Title',
-        }
+        },
       ],
     },
     {
