@@ -1,6 +1,7 @@
 import { client, urlFor } from "@/lib/sanity";
 import { BlogArticle } from "@/types/interface";
 import { format } from "date-fns";
+import Link from "next/link";
 
 const blogs = [
   {
@@ -99,7 +100,7 @@ const Blogs = async () => {
         </div>
         <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
           {data.map((blog: BlogArticle) => (
-            <article key={blog.id} className="flex flex-col items-start justify-between">
+            <Link href={`/blog/${blog.currentSlug}`} key={blog.id} className="flex flex-col items-start justify-between">
               <div className="relative w-full">
                 <img
                   src={urlFor(blog.imageUrl).url()}
@@ -142,7 +143,7 @@ const Blogs = async () => {
                   </div>
                 </div>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
       </div>

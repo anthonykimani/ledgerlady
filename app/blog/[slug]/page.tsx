@@ -104,9 +104,9 @@ const BlogStructure = async ({ params }: { params: { slug: string } }) => {
     blog.content && (
       <>
         <Navbar />
-        <section className="bg-[#161625] font-jakarta md:py-10 sm:px-[30px] xl:px-[100px]">
-          <article className="flex flex-col items-center xsm:flex-row py-5">
-            <h2 className="text-[#A33DFF] text-center font-bold text-3xl md:text-4xl lg:text-5xl mb-5">
+        <section className="bg-white font-jakarta md:py-10 sm:px-[30px] xl:px-[100px]">
+          <article className="flex flex-col items-center py-5">
+            <h2 className="text-deepBlue text-center font-bold text-3xl md:text-4xl lg:text-5xl mb-5">
               {blog.title}
             </h2>
             <Image
@@ -117,8 +117,8 @@ const BlogStructure = async ({ params }: { params: { slug: string } }) => {
               className="h-[200px] sm:h-[500px] w-[95%] sm:w-full object-cover my-[20px] rounded-md"
             />
           </article>
-          <div className="flex flex-col-reverse md:flex-row prose prose-base sm:prose-xl min-w-full text-white prose-invert prose-li:marker:text-primary prose-a:text-primary">
-            <div className="mx-[10px] md:mx-[0px] rounded-3xl p-4 sm:p-5 md:p-10 bg-slate-100 bg-opacity-5">
+          <div className="flex flex-col-reverse md:flex-row prose prose-base sm:prose-xl min-w-full text-black prose-invert prose-li:marker:text-primary prose-a:text-primary">
+            <div className="mx-[10px] md:mx-[0px] rounded-3xl p-4 sm:p-5 md:p-10 bg-slate-200 bg-opacity-100">
               <PortableText
                 value={blog.content}
                 components={myPortableTextComponents}
@@ -138,9 +138,9 @@ export default BlogStructure;
 const Toc = ({ headings }: any) => {
   return (
     <div className="min-w-[30%] md:ml-5">
-      <h2 className="text-white text-xl sm:text-3xl">Table of Contents</h2>
+      <h2 className="text-black text-xl sm:text-3xl">Table of Contents</h2>
       <nav>
-        <ul className="text-white">
+        <ul className="text-black">
           {headings?.map((heading: any) => {
             return (
               <li key={`#${heading?._key}`} className="mb-2">
