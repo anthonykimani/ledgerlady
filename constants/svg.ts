@@ -5,7 +5,8 @@ import CareerAbout from "@/public/svg/career.svg";
 import MeetupAbout from "@/public/svg/meetup.svg";
 import OnlineCourse from "@/public/svg/online-course.svg";
 import Organized from "@/public/svg/organized.svg";
-import Product from "@/public/svg/product.svg"
+import Product from "@/public/svg/product.svg";
+import Location from "@/public/svg/location.svg"
 
 export {
     HifadhiLogo,
@@ -15,5 +16,6 @@ export {
     MeetupAbout,
     OnlineCourse,
     Organized,
-    Product
+    Product,
+    Location
 }
