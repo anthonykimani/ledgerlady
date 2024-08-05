@@ -20,9 +20,9 @@ const Navbar = () => {
   return (
     <div className="">
       <div className="flex justify-between items-center p-3 md:px-20 text-white">
-        <div className=" w-auto flex items-center">
+        <Link href="/" className=" w-auto flex items-center">
           <Image src={LedgerLadyLogo} alt="atlas-logo" className="w-auto" />
-        </div>
+        </Link>
         <div className="block md:hidden">
           <List
             size={32}
@@ -42,90 +42,71 @@ const Navbar = () => {
             onClick={toggleMenu}
           />
           <ul className="flex flex-col sm:flex-row justify-around text-base font-DM text-black w-auto">
-            <a
-              href="#Home"
+            <Link
+              href="/"
               onClick={() => {
                 scrollRef.current?.scrollIntoView({
                   behavior: "smooth",
                 });
               }}
-              className="my-2 mx-2 w-[100%] sm:min-w-[100px] text-black hover:text-aqua hover:cursor-pointer "
+              className="my-2 mx-2 w-[100%] sm:min-w-[100px] text-black hover:text-aqua hover:cursor-pointer hover:underline "
             >
               Home
-            </a>
-            <a className="my-2 mx-2 w-[100%] sm:min-w-[100px] text-black hover:text-aqua hover:cursor-pointer ">
-              Blogs
-            </a>
-            <a className="my-2 mx-2 w-[100%] sm:min-w-[100px] text-black hover:text-aqua hover:cursor-pointer ">
-              Services
-            </a>
-            <a
-              onClick={() => {
-                window.scrollBy({
-                  top: 1200,
-                });
-              }}
-              className="my-2 mx-1 w-[100%] min-w-[100px] text-black hover:text-aqua hover:cursor-pointer "
+            </Link>
+            <Link
+            href="/courses" className="my-2 mx-2 w-[100%] sm:min-w-[100px] text-black hover:text-aqua hover:cursor-pointer hover:underline ">
+              Course
+            </Link>
+            <Link
+            href="/events" className="my-2 mx-2 w-[100%] sm:min-w-[100px] text-black hover:text-aqua hover:cursor-pointer hover:underline ">
+              Events
+            </Link>
+            <Link
+            href="/blogs"
+              className="my-2 mx-1 w-[100%] min-w-[100px] text-black hover:text-aqua hover:cursor-pointer hover:underline "
             >
-              About
-            </a>
+              Blogs
+            </Link>
           </ul>
         </div>
 
         <div className="hidden md:flex items-center">
           <ul className=" flex flex-col sm:flex-row justify-around text-base font-DM text-[#A2A2A2] w-auto">
-            <li className="mx-2 w-[100%] text-black hover:text-aqua hover:cursor-pointer ">
+            <Link
+            href="/" className="mx-2 w-[100%] text-black hover:text-aqua hover:cursor-pointer hover:underline ">
               Home
-            </li>
-            <li
-              onClick={() => {
-                window.scrollBy({
-                  top: 3000,
-                  behavior: "smooth",
-                });
-              }}
-              className="mx-2 w-[100%] text-black hover:text-aqua hover:cursor-pointer "
+            </Link>
+            <Link
+            href="/courses"
+              className="mx-2 w-[100%] text-black hover:text-aqua hover:cursor-pointer hover:underline "
             >
               Courses
-            </li>
-            <li
-              onClick={() => {
-                window.scrollBy({
-                  top: 3000,
-                  behavior: "smooth",
-                });
-              }}
-              className="mx-2 w-[100%] text-black hover:text-aqua hover:cursor-pointer "
+            </Link>
+            <Link
+            href="/events"
+              className="mx-2 w-[100%] text-black hover:text-aqua hover:cursor-pointer hover:underline "
             >
               Events
-            </li>
-            <li
-              onClick={() => {
-                window.scrollBy({
-                  top: 1800,
-                  behavior: "smooth",
-                });
-              }}
-              className="mx-2 w-[100%] text-black hover:text-aqua hover:cursor-pointer "
+            </Link>
+            <Link
+            href="/blogs"
+
+              className="mx-2 w-[100%] text-black hover:text-aqua hover:cursor-pointer hover:underline "
             >
               Blogs
-            </li>
-            <li
-              onClick={() => {
-                window.scrollBy({
-                  top: 940,
-                  behavior: "smooth",
-                });
-              }}
-              className="mx-2 w-[100%] text-black hover:text-aqua hover:cursor-pointer "
+            </Link>
+            <Link
+            href="/about"
+
+              className="mx-2 w-[100%] text-black hover:text-aqua hover:cursor-pointer hover:underline "
             >
               About
-            </li>
+            </Link>
           </ul>
         </div>
         <div className="hidden md:flex">
           <Link
-            href="/register"
+          href="/"
             className=" py-2 px-6 rounded-full border bg-black text-white text-sm"
           >
             Apply

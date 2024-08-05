@@ -9,6 +9,7 @@ import Image from "next/image";
 import React from "react";
 import Navbar from "@/components/landing/Navbar";
 import Link from "next/link";
+import Footer from "@/components/landing/Footer";
 
 export const revalidate = 30;
 
@@ -104,9 +105,9 @@ const CourseStructure = async ({ params }: { params: { slug: string } }) => {
     course.content && (
       <>
         <Navbar />
-        <section className="bg-white font-jakarta md:py-10 sm:px-[30px] xl:px-[100px]">
+        <section className="bg-white font-DM md:py-10 sm:px-[30px] xl:px-[100px]">
           <article className="flex flex-col items-center py-5">
-            <h2 className="text-deepBlue text-center font-bold text-3xl md:text-4xl lg:text-5xl mb-5">
+            <h2 className="text-black text-center font-bold text-3xl md:text-4xl lg:text-5xl mb-5">
               {course.title}
             </h2>
             <Image
@@ -118,7 +119,7 @@ const CourseStructure = async ({ params }: { params: { slug: string } }) => {
             />
           </article>
           <div className="flex flex-col-reverse md:flex-row prose prose-base sm:prose-xl min-w-full text-black prose-invert prose-li:marker:text-primary prose-a:text-primary">
-            <div className="mx-[10px] md:mx-[0px] rounded-3xl p-4 sm:p-5 md:p-10 bg-slate-200 bg-opacity-100">
+            <div className="mx-[10px] md:mx-[0px] rounded-xl p-4 sm:p-5 md:p-10 bg-slate-200 bg-opacity-50">
               <PortableText
                 value={course.content}
                 components={myPortableTextComponents}
@@ -128,6 +129,7 @@ const CourseStructure = async ({ params }: { params: { slug: string } }) => {
           </div>
           <FeaturedBlogPost />
         </section>
+        <Footer />
       </>
     )
   );
@@ -137,16 +139,16 @@ export default CourseStructure;
 
 const Toc = ({ headings }: any) => {
   return (
-    <div className="min-w-[30%] md:ml-5">
-      <h2 className="text-black text-xl sm:text-3xl">Table of Contents</h2>
-      <nav>
+    <div className="min-w-[30%] md:ml-5 mx-10">
+      <h2 className="text-black text-xl sm:text-2xl">Table of Contents</h2>
+      <nav className="mt-10">
         <ul className="text-black">
           {headings?.map((heading: any) => {
             return (
               <li key={`#${heading?._key}`} className="mb-2">
                 <Link
                   href={`#${slugify(heading?.children[0].text)}`}
-                  className=" hover:text-[#A33DFF] ease-in-out text-base sm:text-lg"
+                  className=" hover:text-deepBlue ease-in-out text-base sm:text-lg"
                 >
                   {heading?.children[0].text}
                 </Link>
@@ -160,10 +162,10 @@ const Toc = ({ headings }: any) => {
           <Link
             key={item.name}
             href={item.href}
-            className="text-gray-500 hover:text-gray-400 border border-gray-400 p-3 rounded-full"
+            className="text-gray-500 hover:text-deepBlue border border-gray-500 p-3 rounded-full"
           >
             <span className="sr-only">{item.name}</span>
-            <item.icon className="h-4 w-4 xl:h-8 xl:w-8" aria-hidden="true" />
+            <item.icon className="h-4 w-4 xl:h-6 xl:w-6" aria-hidden="true" />
           </Link>
         ))}
       </div>
